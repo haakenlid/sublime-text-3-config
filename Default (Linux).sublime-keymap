@@ -1,0 +1,12 @@
+[
+    { "keys": ["shift+tab"], "command": "move", "args": {"by": "lines", "forward": false} , "context":
+        [
+            { "key": "overlay_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["tab"], "command": "move", "args": {"by": "lines", "forward": true} , "context":
+        [
+            { "key": "overlay_visible", "operator": "equal", "operand": true }
+        ]
+    }
+]

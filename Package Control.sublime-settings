@@ -1,0 +1,14 @@
+{
+	"installed_packages":
+	[
+		"Anaconda",
+		"FileDiffs",
+		"GitGutter",
+		"Open URL",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeGit",
+		"Terminal",
+		"Vintageous"
+	]
+}

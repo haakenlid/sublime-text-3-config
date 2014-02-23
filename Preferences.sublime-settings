@@ -1,0 +1,15 @@
+{
+	"auto_match_enabled": true,
+	"dictionary": "Packages/Language - Norwegian/Norwegian (Bokmal).dic",
+	"fade_fold_buttons": false,
+	"font_size": 9,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"show_markers_on_untracked_file": true,
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": false,
+	"word_wrap": true
+}
