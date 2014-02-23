@@ -1,12 +1,69 @@
-[
-    { "keys": ["shift+tab"], "command": "move", "args": {"by": "lines", "forward": false} , "context":
-        [
-            { "key": "overlay_visible", "operator": "equal", "operand": true }
-        ]
+[{
+    "keys": ["shift+tab"],
+    "command": "move",
+    "args": {
+        "by": "lines",
+        "forward": false
     },
-    { "keys": ["tab"], "command": "move", "args": {"by": "lines", "forward": true} , "context":
-        [
-            { "key": "overlay_visible", "operator": "equal", "operand": true }
-        ]
-    }
-]
+    "context": [{
+        "key": "overlay_visible",
+        "operator": "equal",
+        "operand": true
+    }]
+}, {
+    "keys": ["tab"],
+    "command": "move",
+    "args": {
+        "by": "lines",
+        "forward": true
+    },
+    "context": [{
+        "key": "overlay_visible",
+        "operator": "equal",
+        "operand": true
+    }]
+}, {
+    "keys": ["h"],
+    "command": "move",
+    "args": {
+        "by": "characters",
+        "forward": false
+    },
+    "context": [{
+        "key": "control",
+        "operand": "sidebar_tree"
+    }]
+}, {
+    "keys": ["j"],
+    "command": "move",
+    "args": {
+        "by": "lines",
+        "forward": true
+    },
+    "context": [{
+        "key": "control",
+        "operand": "sidebar_tree"
+    }]
+}, {
+    "keys": ["k"],
+    "command": "move",
+    "args": {
+        "by": "lines",
+        "forward": false
+    },
+    "context": [{
+        "key": "control",
+        "operand": "sidebar_tree"
+    }]
+}, {
+    "keys": ["l"],
+    "command": "move",
+    "args": {
+        "by": "characters",
+        "forward": true
+    },
+    "context": [{
+        "key": "control",
+        "operand": "sidebar_tree"
+    }]
+}]
