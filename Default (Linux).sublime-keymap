@@ -1,69 +1,269 @@
-[{
-    "keys": ["shift+tab"],
-    "command": "move",
-    "args": {
-        "by": "lines",
-        "forward": false
+[
+    //  Normal mode by pressing "jj"
+    {
+        "keys": ["j", "j"],
+        "command": "_enter_normal_mode",
+        "args": {
+            "mode": "mode_insert"
+        },
+        "context": [{
+            "key": "vi_insert_mode_aware"
+        }, {
+            "key": "setting.easy_motion_mode",
+            "operator": "equal",
+            "operand":  false
+        }]
     },
-    "context": [{
-        "key": "overlay_visible",
-        "operator": "equal",
-        "operand": true
-    }]
-}, {
-    "keys": ["tab"],
-    "command": "move",
-    "args": {
-        "by": "lines",
-        "forward": true
+    // Make tab and shift tab browse options in overlay
+    {
+        "keys": ["shift+tab"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": false
+        },
+        "context": [{
+            "key": "overlay_visible",
+            "operator": "equal",
+            "operand": true
+        }]
+    }, {
+        "keys": ["tab"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": true
+        },
+        "context": [{
+            "key": "overlay_visible",
+            "operator": "equal",
+            "operand": true
+        }]
     },
-    "context": [{
-        "key": "overlay_visible",
-        "operator": "equal",
-        "operand": true
-    }]
-}, {
-    "keys": ["h"],
-    "command": "move",
-    "args": {
-        "by": "characters",
-        "forward": false
+    //  Vim movement in sidebar tree
+    {
+        "keys": ["h"],
+        "command": "move",
+        "args": {
+            "by": "characters",
+            "forward": false
+        },
+        "context": [{
+            "key": "control",
+            "operand": "sidebar_tree"
+        }]
+    }, {
+        "keys": ["j"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": true
+        },
+        "context": [{
+            "key": "control",
+            "operand": "sidebar_tree"
+        }]
+    }, {
+        "keys": ["k"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": false
+        },
+        "context": [{
+            "key": "control",
+            "operand": "sidebar_tree"
+        }]
+    }, {
+        "keys": ["l"],
+        "command": "move",
+        "args": {
+            "by": "characters",
+            "forward": true
+        },
+        "context": [{
+            "key": "control",
+            "operand": "sidebar_tree"
+        }]
     },
-    "context": [{
-        "key": "control",
-        "operand": "sidebar_tree"
-    }]
-}, {
-    "keys": ["j"],
-    "command": "move",
-    "args": {
-        "by": "lines",
-        "forward": true
+    // Toggle comment with divide button
+    {
+        "keys": ["ctrl+keypad_divide"],
+        "command": "toggle_comment",
+        "args": {
+            "block": false
+        }
+    }, {
+        "keys": ["ctrl+shift+keypad_divide"],
+        "command": "toggle_comment",
+        "args": {
+            "block": true
+        }
     },
-    "context": [{
-        "key": "control",
-        "operand": "sidebar_tree"
-    }]
-}, {
-    "keys": ["k"],
-    "command": "move",
-    "args": {
-        "by": "lines",
-        "forward": false
+    // Vim scoll up and down with ctrl+U and ctrl+D
+    {
+        "keys": ["ctrl+u"],
+        "command": "press_key",
+        "args": {
+            "key": "<C-u>"
+        },
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
+    }, {
+        "keys": ["ctrl+d"],
+        "command": "press_key",
+        "args": {
+            "key": "<C-d>"
+        },
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
     },
-    "context": [{
-        "key": "control",
-        "operand": "sidebar_tree"
-    }]
-}, {
-    "keys": ["l"],
-    "command": "move",
-    "args": {
-        "by": "characters",
-        "forward": true
+    // EasyMotion with ctrl+g
+    {
+        "keys": ["ctrl+g"]
+    }, {
+        "keys": ["ctrl+g", "<character>"],
+        "command": "easy_motion",
+        "args": {
+            "select_text": false
+        },
+    }, {
+        "keys": ["g", "t", "<character>"],
+        "command": "easy_motion",
+        "args": {
+            "select_text": true
+        },
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
+    }, {
+        "keys": ["g", "t", "enter"],
+        "command": "easy_motion",
+        "args": {
+            "select_text": true,
+            "character": "enter"
+        },
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
+    }, {
+        "keys": ["g", "t", "<character>"],
+        "command": "easy_motion",
+        "args": {
+            "select_text": false
+        },
+        "context": [{
+            "key": "selection_empty",
+            "operator": "equal",
+            "operand": true
+        }, {
+            "key": "vi_command_mode_aware"
+        }]
+    }, {
+        "keys": ["g", "t", "enter"],
+        "command": "easy_motion",
+        "args": {
+            "select_text": false,
+            "character": "enter"
+        },
+        "context": [{
+            "key": "selection_empty",
+            "operator": "equal",
+            "operand": true
+        }, {
+            "key": "vi_command_mode_aware"
+        }]
     },
-    "context": [{
-        "key": "control",
-        "operand": "sidebar_tree"
-    }]
-}]
+    //  Vintageous use g<number> to focus groups
+    {
+        "keys": ["g", "1"],
+        "command": "focus_group",
+        "args": {
+            "group": 0
+        },
+        "context": {
+            "key": "vi_command_mode_aware"
+        }
+    }, {
+        "keys": ["g", "2"],
+        "command": "focus_group",
+        "args": {
+            "group": 1
+        },
+        "context": {
+            "key": "vi_command_mode_aware"
+        }
+    }, {
+        "keys": ["g", "3"],
+        "command": "focus_group",
+        "args": {
+            "group": 2
+        },
+        "context": {
+            "key": "vi_command_mode_aware"
+        }
+    }, {
+        "keys": ["g", "4"],
+        "command": "focus_group",
+        "args": {
+            "group": 3
+        },
+        "context": {
+            "key": "vi_command_mode_aware"
+        }
+    }, {
+        "keys": ["g", "0"],
+        "command": "focus_side_bar"
+    },
+
+
+
+
+
+    //  Ctrl+o and i to jump like in Vim
+    {
+        "keys": ["ctrl+o"],
+        "command": "jump_back",
+    }, {
+        "keys": ["ctrl+i"],
+        "command": "jump_forward",
+    },
+
+    //  Vim style goto commands
+    {
+        "keys": ["g", "S"],
+        "command": "goto_symbol_in_project",
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
+    }, {
+        "keys": ["g", "s"],
+        "command": "show_overlay",
+        "args": {
+            "overlay": "goto",
+            "text": "@"
+        },
+        "context": [{
+            "key": "vi_command_mode_aware"
+        }]
+    },
+
+    //  Anaconda bindings
+    {
+        "command": "anaconda_next_lint_error",
+        "keys": ["g", "l"],
+        "context": [{
+            "key": "selector",
+            "operator": "equal",
+            "operand": "source.python"
+        }, {
+            "key": "setting.command_mode",
+            "operand": true
+        }, {
+            "key": "setting.is_widget",
+            "operand": false
+        }]
+    }
+]

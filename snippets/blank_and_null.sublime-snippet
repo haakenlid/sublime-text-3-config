@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[blank=True, null=True]]></content>
+    <tabTrigger>mblank</tabTrigger>
+    <scope>source.python</scope>
+    <description>blank & null (mblank)</description>
+</snippet>
+

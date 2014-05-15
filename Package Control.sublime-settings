@@ -1,13 +1,24 @@
 {
 	"installed_packages":
 	[
+		"Alignment",
 		"Anaconda",
+		"AutoFileName",
+		"Clickable URLs",
+		"CSV",
+		"Djaneiro",
 		"FileDiffs",
+		"Floobits",
 		"GitGutter",
-		"Open URL",
+		"HTML-CSS-JS Prettify",
 		"Package Control",
 		"SideBarEnhancements",
 		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-json",
+		"SublimeLinter-php",
+		"SublimeLinter-shellcheck",
 		"Terminal",
 		"Vintageous"
 	]

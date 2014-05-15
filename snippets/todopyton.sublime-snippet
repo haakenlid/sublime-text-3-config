@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[# TODO: $1]]></content>
+    <tabTrigger>todo</tabTrigger>
+    <scope>source.python</scope>
+    <description>todo comment</description>
+</snippet>   
