@@ -1,15 +1,20 @@
 {
+	"auto_complete_with_fields": true,
 	"auto_match_enabled": true,
 	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"dictionary": "Packages/Language - Norwegian/Norwegian (Bokmal).dic",
+	"draw_white_space": "selection",
 	"fade_fold_buttons": false,
-	"font_size": 9,
+	"font_size": 8,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"AutoFileName",
 		"Vintage",
-		"Clickable URLs",
+		"AutoFileName"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal"
 	],
 	"show_markers_on_untracked_file": true,
 	"vintage_ctrl_keys": true,
