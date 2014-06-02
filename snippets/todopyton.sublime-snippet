@@ -1,6 +1,8 @@
 <snippet>
-    <content><![CDATA[# TODO: $1]]></content>
-    <tabTrigger>todo</tabTrigger>
+    <content><![CDATA["""
+$1
+"""]]></content>
+    <tabTrigger>docstring</tabTrigger>
     <scope>source.python</scope>
-    <description>todo comment</description>
+    <description>docstring</description>
 </snippet>   

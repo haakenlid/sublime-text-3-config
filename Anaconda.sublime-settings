@@ -1,3 +1,145 @@
 {
-    "pep8_ignore": ["E501"] // lines > 79 characters ignore linting
+    "aggressive": 7,
+    "pep8_max_line_length": 120,
+    "display_signatures": true,
+    "pep8": true,
+    "pep257": true,
+    "suppress_word_completions": false,
+    "suppress_explicit_completions": false,
+    "complete_parameters": false,
+    "complete_all_parameters": false,
+    "anaconda_linter_delay": 1.5,
+    "pep8_ignore": [
+        // "E101",  // Reindent all lines.
+        // "E111",  // Reindent all lines.
+        // "E121",  // Fix indentation to be a multiple of four.
+        // "E122",  // Add absent indentation for hanging indentation.
+        // "E123",  // Align closing bracket to match opening bracket.
+        // "E124",  // Align closing bracket to match visual indentation.
+        // "E125",  // Indent to distinguish line from next logical line.
+        // "E126",  // Fix over-indented hanging indentation.
+        // "E127",  // Fix visual indentation.
+        // "E128",  // Fix visual indentation.
+        // "E129",  // Indent to distinguish line from next logical line.
+        // "E201",  // Remove extraneous whitespace.
+        // "E202",  // Remove extraneous whitespace.
+        // "E203",  // Remove extraneous whitespace.
+        // "E211",  // Remove extraneous whitespace.
+        // "E221",  // Fix extraneous whitespace around keywords.
+        // "E222",  // Fix extraneous whitespace around keywords.
+        // "E223",  // Fix extraneous whitespace around keywords.
+        // "E224",  // Remove extraneous whitespace around operator.
+        // "E225",  // Fix missing whitespace around operator.
+        // "E226",  // Fix missing whitespace around operator.
+        // "E227",  // Fix missing whitespace around operator.
+        // "E228",  // Fix missing whitespace around operator.
+        // "E231",  // Add missing whitespace.
+        // "E241",  // Fix extraneous whitespace around keywords.
+        // "E242",  // Remove extraneous whitespace around operator.
+        // "E251",  // Remove whitespace around parameter '=' sign.
+        // "E261",  // Fix spacing after comment hash.
+        // "E262",  // Fix spacing after comment hash.
+        // "E271",  // Fix extraneous whitespace around keywords.
+        // "E272",  // Fix extraneous whitespace around keywords.
+        // "E273",  // Fix extraneous whitespace around keywords.
+        // "E274",  // Fix extraneous whitespace around keywords.
+        // "E301",  // Add missing blank line.
+        // "E302",  // Add missing 2 blank lines.
+        // "E303",  // Remove extra blank lines.
+        // "E304",  // Remove blank line following function decorator.
+        // "E401",  // Put imports on separate lines.
+        // "E501",  // Try to make lines fit within --max-line-length characters.
+        // "E502",  // Remove extraneous escape of newline.
+        // "E701",  // Put colon-separated compound statement on separate lines.
+        // "E702",  // Put semicolon-separated compound statement on separate lines.
+        // "E703",  // Put semicolon-separated compound statement on separate lines.
+        // "E711",  // Fix comparison with None.
+        // "E712",  // Fix comparison with boolean.
+        // "W191",  // Reindent all lines.
+        "W291",  // Remove trailing whitespace.
+        "W293",  // Remove trailing whitespace on blank line.
+        // "W391",  // Remove trailing blank lines.
+        // "E26",   // Format block comments.
+        // "W6",    // Fix various deprecated code (via lib2to3).
+        // "W602",  // Fix deprecated form of raising exception.
+    ],
+   
+    "pep257_ignore": [
+        "D101",  // Public module missing.
+        // "D102",  // Public class missing.
+        // "D103",  // Public method missing.
+        // "D104",  // Public function missing.
+        "D200",  // One-line docstrings should fit on one line with quotes.
+        // "D201",  // No blank lines allowed before docstring.
+        // "D202",  // No blank lines allowed after docstring.
+        "D203",  // 1 blank required before class docstring.
+        // "D204",  // 1 blank required after class docstring.
+        "D205",  // Blank line required between one-line summary and description.
+        // "D206",  // Docstring should be indented with spaces, not tabs.
+        // "D207",  // Docstring under-indented.
+        // "D208",  // Docstring over-indented.
+        "D209",  // Put multi-line docstring closing quotes on separate line.
+        // "D300",  // Use """triple double quotes""".
+        // "D301",  // Use r""" if any backslashes in your docstring.
+        // "D302",  // Use u""" for Unicode docstrings (Python 2 only).
+        "D400",  // First line should end with a period.
+        "D401",  // First line should be in imperative mood.
+        // "D402",  // First line should not be the function's "signature".
+    ],
+
+    "autoformat_ignore": [
+        "D203",  // 1 blank required before class docstring.
+        // "E101",  // Reindent all lines.
+        // "E111",  // Reindent all lines.
+        // "E121",  // Fix indentation to be a multiple of four.
+        // "E122",  // Add absent indentation for hanging indentation.
+        // "E123",  // Align closing bracket to match opening bracket.
+        // "E124",  // Align closing bracket to match visual indentation.
+        // "E125",  // Indent to distinguish line from next logical line.
+        // "E126",  // Fix over-indented hanging indentation.
+        // "E127",  // Fix visual indentation.
+        // "E128",  // Fix visual indentation.
+        // "E129",  // Indent to distinguish line from next logical line.
+        // "E201",  // Remove extraneous whitespace.
+        // "E202",  // Remove extraneous whitespace.
+        // "E203",  // Remove extraneous whitespace.
+        // "E211",  // Remove extraneous whitespace.
+        // "E221",  // Fix extraneous whitespace around keywords.
+        // "E222",  // Fix extraneous whitespace around keywords.
+        // "E223",  // Fix extraneous whitespace around keywords.
+        // "E224",  // Remove extraneous whitespace around operator.
+        // "E225",  // Fix missing whitespace around operator.
+        // "E226",  // Fix missing whitespace around operator.
+        // "E227",  // Fix missing whitespace around operator.
+        // "E228",  // Fix missing whitespace around operator.
+        // "E231",  // Add missing whitespace.
+        // "E241",  // Fix extraneous whitespace around keywords.
+        // "E242",  // Remove extraneous whitespace around operator.
+        // "E251",  // Remove whitespace around parameter '=' sign.
+        // "E261",  // Fix spacing after comment hash.
+        // "E262",  // Fix spacing after comment hash.
+        // "E271",  // Fix extraneous whitespace around keywords.
+        // "E272",  // Fix extraneous whitespace around keywords.
+        // "E273",  // Fix extraneous whitespace around keywords.
+        // "E274",  // Fix extraneous whitespace around keywords.
+        // "E301",  // Add missing blank line.
+        // "E302",  // Add missing 2 blank lines.
+        // "E303",  // Remove extra blank lines.
+        // "E304",  // Remove blank line following function decorator.
+        // "E401",  // Put imports on separate lines.
+        // "E501",  // Try to make lines fit within --max-line-length characters.
+        // "E502",  // Remove extraneous escape of newline.
+        // "E701",  // Put colon-separated compound statement on separate lines.
+        // "E702",  // Put semicolon-separated compound statement on separate lines.
+        // "E703",  // Put semicolon-separated compound statement on separate lines.
+        // "E711",  // Fix comparison with None.
+        // "E712",  // Fix comparison with boolean.
+        // "W191",  // Reindent all lines.
+        // "W291",  // Remove trailing whitespace.
+        // "W293",  // Remove trailing whitespace on blank line.
+        // "W391",  // Remove trailing blank lines.
+        // "E26",   // Format block comments.
+        // "W6",    // Fix various deprecated code (via lib2to3).
+        // "W602",  // Fix deprecated form of raising exception.
+    ],
 }

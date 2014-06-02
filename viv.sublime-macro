@@ -1,0 +1,24 @@
+[
+	{
+		"args":
+		{
+			"characters": "i"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"mode": "mode_insert"
+		},
+		"command": "_enter_normal_mode"
+	},
+	{
+		"args":
+		{
+			"count": 1,
+			"mode": "mode_internal_normal"
+		},
+		"command": "_vi_dd_action"
+	}
+]
