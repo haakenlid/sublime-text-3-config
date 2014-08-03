@@ -1,0 +1,7 @@
+{
+	"python": "python",
+	"kernprof": "/usr/local/bin/kernprof.py",
+	"pythonpath": "",
+	"poll_sleep_seconds": 1,
+	"poll_timeout_seconds": 60
+}

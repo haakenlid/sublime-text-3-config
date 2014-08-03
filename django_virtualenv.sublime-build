@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "python -um \"$file\"",
+    "selector": "source.python"
+}

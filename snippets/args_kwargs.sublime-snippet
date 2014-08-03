@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[*args, **kwargs]]></content>
+    <tabTrigger>args kwargs</tabTrigger>
+    <scope>source.python</scope>
+    <description>args and kwargs</description>
+</snippet>

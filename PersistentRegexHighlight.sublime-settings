@@ -1,0 +1,7 @@
+{
+"regex": [
+	{
+	"pattern": "[ \\t]{2,}$",
+	"color_scope": "trailing.spaces",
+	} ]
+}

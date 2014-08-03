@@ -6,9 +6,12 @@
     "pep257": true,
     "suppress_word_completions": false,
     "suppress_explicit_completions": false,
-    "complete_parameters": false,
+    "complete_parameters": true,
     "complete_all_parameters": false,
-    "anaconda_linter_delay": 1.5,
+    "anaconda_linter_delay": 1.0,
+    "anaconda_gutter_marks": true,
+    // "anaconda_gutter_theme": "bright",
+    "anaconda_linter_mark_style": "none",
     "pep8_ignore": [
         // "E101",  // Reindent all lines.
         // "E111",  // Reindent all lines.
@@ -43,10 +46,10 @@
         // "E272",  // Fix extraneous whitespace around keywords.
         // "E273",  // Fix extraneous whitespace around keywords.
         // "E274",  // Fix extraneous whitespace around keywords.
-        // "E301",  // Add missing blank line.
-        // "E302",  // Add missing 2 blank lines.
-        // "E303",  // Remove extra blank lines.
-        // "E304",  // Remove blank line following function decorator.
+        "E301",  // Add missing blank line.
+        "E302",  // Add missing 2 blank lines.
+        "E303",  // Remove extra blank lines.
+        "E304",  // Remove blank line following function decorator.
         // "E401",  // Put imports on separate lines.
         // "E501",  // Try to make lines fit within --max-line-length characters.
         // "E502",  // Remove extraneous escape of newline.
@@ -58,16 +61,16 @@
         // "W191",  // Reindent all lines.
         "W291",  // Remove trailing whitespace.
         "W293",  // Remove trailing whitespace on blank line.
-        // "W391",  // Remove trailing blank lines.
+        "W391",  // Remove trailing blank lines.
         // "E26",   // Format block comments.
         // "W6",    // Fix various deprecated code (via lib2to3).
         // "W602",  // Fix deprecated form of raising exception.
     ],
-   
+
     "pep257_ignore": [
         "D101",  // Public module missing.
-        // "D102",  // Public class missing.
-        // "D103",  // Public method missing.
+        "D102",  // Public class missing.
+        "D103",  // Public method missing.
         // "D104",  // Public function missing.
         "D200",  // One-line docstrings should fit on one line with quotes.
         // "D201",  // No blank lines allowed before docstring.
@@ -88,7 +91,6 @@
     ],
 
     "autoformat_ignore": [
-        "D203",  // 1 blank required before class docstring.
         // "E101",  // Reindent all lines.
         // "E111",  // Reindent all lines.
         // "E121",  // Fix indentation to be a multiple of four.
@@ -141,5 +143,6 @@
         // "E26",   // Format block comments.
         // "W6",    // Fix various deprecated code (via lib2to3).
         // "W602",  // Fix deprecated form of raising exception.
+        "D203",  // 1 blank required before class docstring.
     ],
 }

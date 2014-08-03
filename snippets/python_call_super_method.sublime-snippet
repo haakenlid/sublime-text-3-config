@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[def ${1:methodname}(self, *args, **kwargs):
+	${2:# do something.}
+	super(${3:modelname}, self).$1(*args, **kwargs)
+	${4:# do something else.}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>supermethod</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Extend super method</description>
+</snippet>

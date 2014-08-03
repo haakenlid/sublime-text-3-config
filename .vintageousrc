@@ -1,1 +1,2 @@
-nmap <cr> hf<space>r<cr>==
+:map <cr> hmmA <esc>`mf<space>r<cr>==
+:map <S-cr> mmiA<esc>hr<cr>==`m

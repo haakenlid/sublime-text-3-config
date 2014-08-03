@@ -1,34 +1,50 @@
 {
+	"auto_close_tags": true,
 	"auto_complete": true,
 	"auto_complete_commit_on_tab": false,
-	"auto_complete_delay": 100,
+	"auto_complete_delay": 300,
 	"auto_complete_selector": "source, text",
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".(\"'qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+			"selector": "text, source, meta, string, punctuation, constant"
+		}
+	],
 	"auto_complete_with_fields": true,
 	"auto_match_enabled": true,
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"dictionary": "Packages/Language - Norwegian/Norwegian (Bokmal).dic",
 	"drag_text": false,
 	"draw_white_space": "selection",
-	"fade_fold_buttons": false,
+	"fade_fold_buttons:": false,
 	"find_selected_text": false,
 	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Python Auto-Complete",
-		"SideBarGit",
+		"AutoFileName",
+		"LineProfiler",
+		"Python Breakpoints",
 		"Floobits",
-		"Vintage",
-		"AutoFileName"
+		"PythonTest",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
 		"draw_normal"
 	],
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"/srv/universitas_project/static*"
+	],
 	"shift_tab_unindent": false,
 	"show_markers_on_untracked_file": true,
 	"tab_completion": true,
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true,

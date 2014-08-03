@@ -1,389 +1,679 @@
 [
-    {   // Normal mode by pressing "jj"
-        "keys": ["j", "j"],
-        "command": "_enter_normal_mode",
-        "args": { "mode": "mode_insert" },
-        "context": [
-            // not easymotion
-            { "key": "setting.easy_motion_mode", "operand": false },
-            { "key": "vi_insert_mode_aware" },
-        ] },
+	{
+		"keys": ["U"],
+		"command": "soft_undo",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["a", "a"],
+		"command": "press_key", "args": {"key": "A"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": true}
+		]
+	},
+	{
+		"keys": ["alt+0"],
+		"command": "fold_fold_depth", "args": {"depth": 0}
+	},
+	{
+		"keys": ["alt+1"],
+		"command": "fold_fold_depth", "args": {"depth": 1}
+	},
+	{
+		"keys": ["alt+2"],
+		"command": "fold_fold_depth", "args": {"depth": 2}
+	},
+	{
+		"keys": ["alt+3"],
+		"command": "fold_fold_depth", "args": {"depth": 3}
+	},
+	{
+		"keys": ["alt+enter"],
+		"command": "open_url"
+	},
+	{
+		"keys": ["c", "c"],
+		"command": "press_key", "args": {"key": "cc"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_normal", "operand": true}
+		]
+	},
+	{
+		"keys": ["c", "c"],
+		"command": "press_key", "args": {"key": "C"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": true}
+		]
+	},
+	{
+		"keys": ["c", "o"],
+		"command": "toggle_comment", "args": {"block": false},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+h"],
+		"command": "carry_file_to_pane", "args": {"direction": "left"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+j"],
+		"command": "carry_file_to_pane", "args": {"direction": "up"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+k"],
+		"command": "carry_file_to_pane", "args": {"direction": "down"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+l"],
+		"command": "carry_file_to_pane", "args": {"direction": "right"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+shift+h"],
+		"command": "create_pane_with_file", "args": {"direction": "left"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+shift+j"],
+		"command": "create_pane_with_file", "args": {"direction": "up"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+shift+k"],
+		"command": "create_pane_with_file", "args": {"direction": "down"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+shift+l"],
+		"command": "create_pane_with_file", "args": {"direction": "right"}
+	},
+	{
+		"keys": ["ctrl+a", "ctrl+z"],
+		"command": "unzoom_pane", "args": {}
+	},
+	{
+		"keys": ["ctrl+a", "h"],
+		"command": "travel_to_pane", "args": {"direction": "left"}
+	},
+	{
+		"keys": ["ctrl+a", "j"],
+		"command": "travel_to_pane", "args": {"direction": "up"}
+	},
+	{
+		"keys": ["ctrl+a", "k"],
+		"command": "travel_to_pane", "args": {"direction": "down"}
+	},
+	{
+		"keys": ["ctrl+a", "l"],
+		"command": "travel_to_pane", "args": {"direction": "right"}
+	},
+	{
+		"keys": ["ctrl+a", "x"],
+		"command": "destroy_pane", "args": {"direction": "self"}
+	},
+	{
+		"keys": ["ctrl+a", "z"],
+		"command": "zoom_pane", "args": {"fraction": 0.9}
+	},
+	{
+		"keys": ["ctrl+alt+h"],
+		"command": "fold_show_documentation",
+		"context": [
+			{"key": "selector", "operand": "source.python"}
+		]
+	},
+	{
+		"keys": ["ctrl+b"],
+		"command": "move", "args": {"forward": false, "by": "words"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+d"],
+		"command": "press_key", "args": {"key": "<C-d>"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+enter"],
+		"command": "ex_substitute", "args": {"line_range": {"right_search_offsets": [], "left_search_offsets": [], "right_ref": null, "left_offset": null, "left_ref": null, "right_offset": null, "separator": null, "text_range": ""}, "pattern": "/$/\\n/"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": false}
+		]
+	},
+	{
+		"keys": ["ctrl+g"],
+		"command": "NULL"
+	},
+	{
+		"keys": ["ctrl+g", "<character>"],
+		"command": "easy_motion", "args": {"select_text": false}
+	},
+	{
+		"keys": ["ctrl+h"],
+		"command": "move", "args": {"forward": false, "by": "characters"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+h"],
+		"command": "fold_fold_content",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+i"],
+		"command": "jump_forward"
+	},
+	{
+		"keys": ["ctrl+j"],
+		"command": "move", "args": {"forward": true, "by": "lines"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+j"],
+		"command": "move", "args": {"forward": true, "by": "lines"},
+		"context": [
+			{"key": "overlay_visible", "operand": true}
+		]
+	},
+	{
+		"keys": ["ctrl+j"],
+		"command": "fold_go_to_sibling_down",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+k"],
+		"command": "move", "args": {"forward": false, "by": "lines"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+k"],
+		"command": "move", "args": {"forward": false, "by": "lines"},
+		"context": [
+			{"key": "overlay_visible", "operand": true}
+		]
+	},
+	{
+		"keys": ["ctrl+k"],
+		"command": "fold_go_to_sibling_up",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+keypad_divide"],
+		"command": "toggle_comment", "args": {"block": false}
+	},
+	{
+		"keys": ["ctrl+l"],
+		"command": "move", "args": {"forward": true, "by": "characters"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+l"],
+		"command": "fold_unfold_content",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+o"],
+		"command": "jump_back"
+	},
+	{
+		"keys": ["ctrl+shift+0"],
+		"command": "run_emmet_action", "args": {"action": "balance_inward"},
+		"context": [
+			{"key": "emmet_action_enabled.balance_inward"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+8"],
+		"command": "anaconda_auto_format",
+		"context": [
+			{"key": "selector", "operand": "source.python"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+9"],
+		"command": "run_emmet_action", "args": {"action": "balance_outward"},
+		"context": [
+			{"key": "emmet_action_enabled.balance_outward"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+enter"],
+		"command": "ex_substitute", "args": {"line_range": {"right_search_offsets": [], "left_search_offsets": [], "right_ref": null, "left_offset": null, "left_ref": null, "right_offset": null, "separator": null, "text_range": ""}, "pattern": "/^/\\n/"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": false}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+h"],
+		"command": "run_emmet_action", "args": {"action": "prev_edit_point"},
+		"context": [
+			{"key": "emmet_action_enabled.prev_edit_point"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+j"],
+		"command": "swap_line_down"
+	},
+	{
+		"keys": ["ctrl+shift+k"],
+		"command": "swap_line_up"
+	},
+	{
+		"keys": ["ctrl+shift+keypad_divide"],
+		"command": "toggle_comment", "args": {"block": true}
+	},
+	{
+		"keys": ["ctrl+shift+l"],
+		"command": "run_emmet_action", "args": {"action": "next_edit_point"},
+		"context": [
+			{"key": "emmet_action_enabled.next_edit_point"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+o"],
+		"command": "prompt_open_file"
+	},
+	{
+		"keys": ["ctrl+space"],
+		"command": "fold_go_to_siblings"
+	},
+	{
+		"keys": ["ctrl+u"],
+		"command": "press_key", "args": {"key": "<C-u>"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+v"],
+		"command": "press_key", "args": {"key": "<C-v>"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+w"],
+		"command": "move", "args": {"forward": true, "by": "words"},
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["d"],
+		"command": "move", "args": {"forward": false, "by": "paragraphs"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["g", "0"],
+		"command": "toggle_side_bar",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "0"],
+		"command": "focus_side_bar",
+		"context": [
+			{"key": "panel", "operand": "sidebar", "operator": "equal"},
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "1"],
+		"command": "focus_group", "args": {"group": 0},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "2"],
+		"command": "focus_group", "args": {"group": 1},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "3"],
+		"command": "focus_group", "args": {"group": 2},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "4"],
+		"command": "focus_group", "args": {"group": 3},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "D"],
+		"command": "anaconda_doc",
+		"context": [
+			{"key": "selector", "operand": "source.python", "operator": "equal"},
+			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "setting.is_widget", "operand": false}
+		]
+	},
+	{
+		"keys": ["g", "L"],
+		"command": "sublimelinter_show_all_errors",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "L"],
+		"command": "anaconda_get_lines",
+		"context": [
+			{"key": "selector", "operand": "source.python"},
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "S"],
+		"command": "goto_symbol_in_project",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "d"],
+		"command": "anaconda_goto",
+		"context": [
+			{"key": "selector", "operand": "source.python", "operator": "equal"},
+			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "setting.is_widget", "operand": false}
+		]
+	},
+	{
+		"keys": ["g", "f"],
+		"command": "fold_go_to_quick_panel",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "g"],
+		"command": "press_key", "args": {"key": "gg"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "i"],
+		"command": "fold_go_to_import",
+		"context": [
+			{"key": "selector", "operand": "source.python"},
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "l"],
+		"command": "sublimelinter_goto_error", "args": {"direction": "next"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "l"],
+		"command": "anaconda_next_lint_error",
+		"context": [
+			{"key": "selector", "operand": "source.python"},
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "s"],
+		"command": "show_overlay", "args": {"overlay": "goto", "text": "@"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "t", "<character>"],
+		"command": "easy_motion", "args": {"select_text": true},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "t", "<character>"],
+		"command": "easy_motion", "args": {"select_text": false},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": false},
+			{"key": "vi_mode_visual_line", "operand": false}
+		]
+	},
+	{
+		"keys": ["g", "t", "enter"],
+		"command": "easy_motion", "args": {"select_text": true, "character": "enter"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "t", "enter"],
+		"command": "easy_motion", "args": {"select_text": false, "character": "enter"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": false},
+			{"key": "vi_mode_visual_line", "operand": false}
+		]
+	},
+	{
+		"keys": ["g", "u"],
+		"command": "anaconda_find_usages",
+		"context": [
+			{"key": "selector", "operand": "source.python", "operator": "equal"},
+			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "setting.is_widget", "operand": false}
+		]
+	},
+	{
+		"keys": ["g", "w"],
+		"command": "show_overlay", "args": {"overlay": "goto", "text": "#"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["g", "x"],
+		"command": "toggle_side_bar",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["h"],
+		"command": "move", "args": {"forward": false, "by": "characters"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["i", "i"],
+		"command": "press_key", "args": {"key": "v"},
+		"context": [
+			{"key": "vi_command_mode_aware"},
+			{"key": "vi_mode_visual", "operand": true}
+		]
+	},
+	{
+		"keys": ["j"],
+		"command": "move", "args": {"forward": true, "by": "lines"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["j", "j"],
+		"command": "_enter_normal_mode", "args": {"mode": "mode_insert"},
+		"context": [
+			{"key": "setting.easy_motion_mode", "operand": false},
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["k"],
+		"command": "move", "args": {"forward": false, "by": "lines"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["l"],
+		"command": "move", "args": {"forward": true, "by": "characters"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["shift+ctrl+æ"],
+		"command": "run_emmet_action", "args": {"action": "remove_tag"},
+		"context": [
+			{"key": "emmet_action_enabled.remove_tag"}
+		]
+	},
+		{ "keys": ["shift+tab"], "command": "unindent" },
+	{
+		"keys": ["shift+tab"],
+		"command": "replace_completion_with_auto_complete",
+		"context": [ {"key": "last_command", "operand": "insert_best_completion", "operator": "equal"} ]
+	},
+	{
+		"keys": ["shift+tab"],
+		"command": "move", "args": {"forward": false, "by": "lines"},
+		"context":  [{"key": "overlay_visible", "operand": true}]
+	},
+	{
+		"keys": ["tab"], "command": "indent",
+		"context":[{"key": "vi_command_mode_aware"}],
+	},
 
-    {   // ctrl+shift+j -> swap line up
-        "keys": ["ctrl+shift+k"],
-        "command": "swap_line_up" },
-    {   // ctrl+shift+j -> swap line up
-        "keys": ["ctrl+shift+j"],
-        "command": "swap_line_down" },
-
-    {   // Insert mode navigation with ctrl+h
-        "keys": ["ctrl+h"],
-        "command": "move",
-        "args": { "by": "characters", "forward": false },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-    {   // Insert mode navigation with ctrl+j
-        "keys": ["ctrl+j"],
-        "command": "move",
-        "args": { "by": "lines", "forward": true },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-    {   // Insert mode navigation with ctrl+k
-        "keys": ["ctrl+k"],
-        "command": "move",
-        "args": { "by": "lines", "forward": false },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-    {   // Insert mode navigation with ctrl+l
-        "keys": ["ctrl+l"],
-        "command": "move",
-        "args": { "by": "characters", "forward": true },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-    {   // Insert mode navigation with ctrl+w
-        "keys": ["ctrl+w"],
-        "command": "move",
-        "args": { "by": "words", "forward": true },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-    {   // Insert mode navigation with ctrl+b
-        "keys": ["ctrl+b"],
-        "command": "move",
-        "args": { "by": "words", "forward": false },
-        "context": [ { "key": "vi_insert_mode_aware" }, ] },
-
-    {   // shift+tab browse in overlay
-        "keys": ["shift+tab"],
-        "command": "move",
-        "args": { "by": "lines", "forward": false },
-        "context": [{ "key": "overlay_visible", "operand": true }] },
-    {   // tab move in overlay
-        "keys": ["tab"],
-        "command": "move",
-        "args": { "by": "lines", "forward": true },
-        "context": [{ "key": "overlay_visible", "operand": true }] },
-
-    {   // Vim movement in sidebar tree
-        "keys": ["h"],
-        "command": "move",
-        "args": { "by": "characters", "forward": false },
-        "context": [{ "key": "control", "operand": "sidebar_tree" }] },
-    {   // Vim movement in sidebar tree
-        "keys": ["j"],
-        "command": "move",
-        "args": { "by": "lines", "forward": true },
-        "context": [{ "key": "control", "operand": "sidebar_tree" }] },
-    {   // Vim movement in sidebar tree
-        "keys": ["k"],
-        "command": "move",
-        "args": { "by": "lines", "forward": false },
-        "context": [{ "key": "control", "operand": "sidebar_tree" }] },
-    {   // Vim movement in sidebar tree
-        "keys": ["l"],
-        "command": "move",
-        "args": { "by": "characters", "forward": true },
-        "context": [{ "key": "control", "operand": "sidebar_tree" }] },
-
-    {   // Toggle comment with divide button
-        "keys": ["ctrl+keypad_divide"],
-        "command": "toggle_comment",
-        "args": { "block": false } },
-    {   // Toggle comment shift + divide
-        "keys": ["ctrl+shift+keypad_divide"],
-        "command": "toggle_comment",
-        "args": { "block": true } },
-    {   // Toggle comment "co"
-        "keys": ["c", "o"],
-        "command": "toggle_comment",
-        "args": { "block": false },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-
-    {   // Vim scoll up and down with ctrl+U and ctrl+D
-        "keys": ["ctrl+u"],
-        "command": "press_key",
-        "args": { "key": "<C-u>" },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // Vim scoll up and down with ctrl+U and ctrl+D
-        "keys": ["ctrl+d"],
-        "command": "press_key",
-        "args": { "key": "<C-d>" },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-
-    {   // Vim fix ctrl+v not paste
-        "keys": ["ctrl+v"],
-        "command": "press_key",
-        "args": { "key": "<C-v>" },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // U -> soft undo
-        "keys": ["U"],
-        "command": "soft_undo",
-        "context": [{ "key": "vi_command_mode_aware" }] },
-
-    {   // ctrl+shift+o -> prompt open file
-        "keys": ["ctrl+shift+o"],
-        "command": "prompt_open_file" },
-    {   // ctrl+o -> jump back
-        "keys": ["ctrl+o"],
-        "command": "jump_back", },
-    {   // ctrl+i -> jump forward
-        "keys": ["ctrl+i"],
-        "command": "jump_forward", },
-
-    {   // g 1 -> group 1
-        "keys": ["g", "1"],
-        "command": "focus_group",
-        "args": { "group": 0 },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g 2 -> group 2
-        "keys": ["g", "2"],
-        "command": "focus_group",
-        "args": { "group": 1 },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g 3 -> group 3
-        "keys": ["g", "3"],
-        "command": "focus_group",
-        "args": { "group": 2 },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g 4 -> group 4
-        "keys": ["g", "4"],
-        "command": "focus_group",
-        "args": { "group": 3 },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g 0 -> sidebar
-        "keys": ["g", "0"],
-        "command": "focus_side_bar",
-        "context": [ {"key": "vi_command_mode_aware" } ] },
-
-    {   // g S -> goto symbol in project.
-        "keys": ["g", "S"],
-        "command": "goto_symbol_in_project",
-        "context": [
-            {"key": "vi_command_mode_aware" }
-        ] },
-    {   // g s -> goto symbol in file.
-        "keys": ["g", "s"],
-        "command": "show_overlay",
-        "args": {
-            "overlay": "goto",
-            "text": "@"
-        },
-        "context": [
-            {"key": "vi_command_mode_aware" }
-        ]  },
-    {   // g w -> goto word
-        "keys": ["g", "w"],
-        "command": "show_overlay",
-        "args": {
-            "overlay": "goto",
-            "text": "#"
-        },
-        "context": [
-            {"key": "vi_command_mode_aware" }
-        ] },
-    {   // g g -> move to top
-        "keys": ["g", "g"],
-        "command": "press_key",
-        "args": { "key": "gg" },
-        "context": [
-            {"key": "vi_command_mode_aware"},
-        ] },
-    {   // g l -> Sublimelint goto error
-        "keys": ["g", "l"],
-        "command": "sublimelinter_goto_error",
-        "args": {"direction": "next"},
-         "context": [
-            {"key": "vi_command_mode_aware"},
-        ] },
-    {   // g l -> Sublimelint show all errors
-        "command": "sublimelinter_show_all_errors",
-        "keys": ["g", "L"],
-        "context": [
-            {"key": "vi_command_mode_aware"},
-        ] },
-    {   // g l -> anaconda next lint error
-        "command": "anaconda_next_lint_error",
-        "keys": ["g", "l"],
-        "context": [
-            {"key": "selector", "operand": "source.python" },
-            {"key": "vi_command_mode_aware" }
-            ]
-        },
-    {   // g L -> anaconda List lint errors
-        "command": "anaconda_get_lines",
-        "keys": ["g", "L"],
-        "context": [
-            {"key": "selector", "operand": "source.python" },
-            {"key": "vi_command_mode_aware" } ]
-        },
-
-    {   // ctrl+shift+8 -> Anaconda PEP8 autoformat
-        "command": "anaconda_auto_format",
-        "keys": ["ctrl+shift+8"],
-        },
-
-    // {   // pageup -> fold go to paren
-    //     "keys": ["pageup"], "command": "fold_go_to_parent" },
-    // {   // pagedown -> fold go to children
-    //     "keys": ["pagedown"], "command": "fold_go_to_children" },
-    {   // ctrl+k -> fold go_to sibling up
-        "keys": ["ctrl+k"], "command": "fold_go_to_sibling_up",
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // ctrl+j -> fold go_to sibling dow
-        "keys": ["ctrl+j"], "command": "fold_go_to_sibling_down" ,
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // ctrl+h -> fold fold conten
-        "keys": ["ctrl+h"], "command": "fold_fold_content" ,
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // ctrl+l -> fold unfold conten
-        "keys": ["ctrl+l"], "command": "fold_unfold_content" ,
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // ctrl+space -> fold go to sibling
-        "keys": ["ctrl+space"], "command": "fold_go_to_siblings" },
-    {   // ctrl+alt+h -> fold show documentatio
-        "keys": ["ctrl+alt+h"], "command": "fold_show_documentation" },
-    {   // alt+0 -> fold fold depth
-        "keys": ["alt+0"], "command": "fold_fold_depth", "args": {"depth": 0} },
-    {   // alt+1 -> fold fold depth
-        "keys": ["alt+1"], "command": "fold_fold_depth", "args": {"depth": 1} },
-    {   // alt+2 -> fold fold depth
-        "keys": ["alt+2"], "command": "fold_fold_depth", "args": {"depth": 2} },
-    {   // alt+3 -> fold fold depth
-        "keys": ["alt+3"], "command": "fold_fold_depth", "args": {"depth": 3} },
-
-    {   // g i -> go to import (Python)
-        "keys": ["g","i"], "command": "fold_go_to_import",
-        "context": [
-            {"key": "selector", "operand": "source.python" },
-            {"key": "vi_command_mode_aware" }
-        ]
-        },
-    {   // g f -> fold quick panel
-        "keys": ["g","f"], "command": "fold_go_to_quick_panel",
-         "context": [ {"key": "vi_command_mode_aware" } ]
-        },
-
-    {   // EasyMotion with ctrl+g
-        "keys": ["ctrl+g"],
-        "command": "NULL" },
-    {   // EasyMotion with ctrl+g
-        "keys": ["ctrl+g", "<character>"],
-        "command": "easy_motion",
-        "args": { "select_text": false }, },
-    {   // g t -> EasyMotion
-        "keys": ["g", "t", "<character>"],
-        "command": "easy_motion",
-        "args": { "select_text": true },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g t -> enter EasyMotion
-        "keys": ["g", "t", "enter"],
-        "command": "easy_motion",
-        "args": { "select_text": true, "character": "enter" },
-        "context": [{ "key": "vi_command_mode_aware" }] },
-    {   // g t -> in visual mode
-        "keys": ["g", "t", "<character>"],
-        "command": "easy_motion",
-        "args": { "select_text": false },
-        "context": [
-            { "key": "vi_mode_visual", "operand": false },
-            { "key": "vi_mode_visual_line", "operand": false },
-            { "key": "vi_command_mode_aware" }] },
-    {   // gt enter-> " in visual mode
-        "keys": ["g", "t", "enter"],
-        "command": "easy_motion",
-        "args": { "select_text": false, "character": "enter" },
-        "context": [
-            { "key": "vi_mode_visual", "operand": false },
-            { "key": "vi_mode_visual_line", "operand": false },
-            { "key": "vi_command_mode_aware" }] },
-
-    {   // ii exits visual mode
-        "keys": ["i","i"],
-        "command": "press_key", "args": { "key": "v" },
-        "context": [ { "key": "vi_mode_visual", "operand": true },] },
-
-    {   // cc exits visual mode
-        "keys": ["c","c"],
-        "command": "press_key", "args": { "key": "C" },
-        "context": [ { "key": "vi_mode_visual", "operand": true },] },
-
-    {   // aa exits visual mode
-        "keys": ["a","a"],
-        "command": "press_key", "args": { "key": "A" },
-        "context": [ { "key": "vi_mode_visual", "operand": true },] },
-
-    {   // ctrl+enter in normal mode inserts linebreak after
-        "keys": ["ctrl+enter"],
-        "command": "ex_substitute",
-        "args": {
-            "line_range": {
-                "left_offset": null,
-                "left_ref": null,
-                "left_search_offsets": [ ],
-                "right_offset": null,
-                "right_ref": null,
-                "right_search_offsets": [ ],
-                "separator": null,
-                "text_range": "" },
-            "pattern": "/^/\\n/" },
-        "context": [
-            { "key": "vi_command_mode_aware" },
-            { "key": "vi_mode_visual", "operand": false } ] },
-
-    {   // ctrl+shift+enter in normal mode inserts linebreak before
-        "keys": ["ctrl+shift+enter"],
-        "command": "ex_substitute",
-        "args": {
-            "line_range": {
-                "left_offset": null,
-                "left_ref": null,
-                "left_search_offsets": [ ],
-                "right_offset": null,
-                "right_ref": null,
-                "right_search_offsets": [ ],
-                "separator": null,
-                "text_range": "" },
-            "pattern": "/^/\\n/" },
-        "context": [
-            { "key": "vi_command_mode_aware" },
-            { "key": "vi_mode_visual", "operand": false } ] },
-
-    {   // tab out of autocompleted quotes etc.
-       "keys": ["tab"], "command": "move", "args": {"by": "characters", "forward": true},
-       "context": [
-            { "key": "following_text", "operator": "regex_contains", "operand": "^[)\\]'\"]", "match_all": true },
-            { "key": "preceding_text", "operator": "regex_contains", "operand": "[(['\"]", "match_all": true },
-            { "key": "auto_complete_visible", "operator": "equal", "operand": false } ] },
-    {
-        "keys": ["tab"],
-        "command": "insert_best_completion",
-        "args": {"default": "\t", "exact": true},
-        "context": [
-            { "key": "vi_insert_mode_aware" }, ] },
-
-    {
-        "keys": ["tab"],
-        "command": "insert_best_completion",
-        "args": {"default": "\t", "exact": false},
-        "context": [
-            { "key": "vi_insert_mode_aware" },
-            { "key": "setting.tab_completion",
-            "operator": "equal", "operand": true } ] },
-
-    {
-        "keys": ["tab"],
-        "command": "next_field",
-        "context": [
-            { "key": "has_next_field",
-            "operator": "equal", "operand": true },
-            { "key": "auto_complete_visible",
-            "operator": "equal", "operand": false } ] },
-
-    {   // tab always cycles autocomplete!
-        "keys": ["tab"],
-        "command": "replace_completion_with_next_completion",
-        "context": [
-            { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
-            { "key": "setting.tab_completion", "operator": "equal", "operand": true } ] },
-
-    {   // shift+tab goes back to autocomplete.
-        "keys": ["shift+tab"],
-        "command": "replace_completion_with_auto_complete",
-        "context": [
-            { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
-            { "key": "setting.tab_completion", "operator": "equal", "operand": true } ] },
+	{
+		"keys": ["tab"],
+		"command": "insert_best_completion", "args": {"default": "\t", "exact": false},
+		"context": [
+			{"key": "setting.tab_completion", "operand": true, "operator": "equal"},
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["tab"],
+		"command": "reindent",
+		"context": [
+			{"key": "following_text", "operand": "^$", "match_all": true, "operator": "regex_match"},
+			{"key": "preceding_text", "operand": "^$", "match_all": true, "operator": "regex_match"},
+			{"key": "selection_empty", "operand": true, "match_all": true, "operator": "equal"},
+			{"key": "setting.auto_indent", "operand": true, "operator": "equal"},
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["tab"],
+		"command": "move", "args": {"forward": true, "by": "characters"},
+		"context": [
+			{"key": "auto_complete_visible", "operand": false, "operator": "equal"},
+			{"key": "following_text", "operand": "^[{}()\\[\\]'\"]", "operator": "regex_contains"},
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
+		"keys": ["tab"],
+		"command": "next_field",
+		"context": [
+			{"key": "auto_complete_visible", "operand": false, "operator": "equal"},
+			{"key": "has_next_field", "operand": true, "operator": "equal"}
+		]
+	},
+	{
+		"keys": ["tab"],
+		"command": "replace_completion_with_next_completion",
+		"context": [
+			{"key": "last_command", "operand": "insert_best_completion", "operator": "equal"}
+		]
+	},
+	{
+		"keys": ["tab"],
+		"command": "move", "args": {"forward": true, "by": "lines"},
+		"context": [
+			{"key": "overlay_visible", "operand": true}
+		]
+	},
+	{
+		"keys": ["u"],
+		"command": "move", "args": {"forward": true, "by": "paragraphs"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["x"],
+		"command": "close_file",
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["z", "1"],
+		"command": "move_to_group", "args": {"group": 0},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["z", "2"],
+		"command": "move_to_group", "args": {"group": 1},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["z", "3"],
+		"command": "move_to_group", "args": {"group": 2},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["z", "4"],
+		"command": "move_to_group", "args": {"group": 3},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["z", "w"],
+		"command": "anaconda_rename",
+		"context": [
+			{"key": "selector", "operand": "source.python", "operator": "equal"},
+			{"key": "setting.command_mode", "operand": true, "operator": "equal"}
+		]
+	}
 ]
