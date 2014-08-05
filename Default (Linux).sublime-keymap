@@ -126,7 +126,7 @@
 	},
 	{
 		"keys": ["ctrl+b"],
-		"command": "move", "args": {"forward": false, "by": "words"},
+		"command": "move", "args": {"by": "words", "forward": false},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -140,7 +140,7 @@
 	},
 	{
 		"keys": ["ctrl+enter"],
-		"command": "ex_substitute", "args": {"line_range": {"right_search_offsets": [], "left_search_offsets": [], "right_ref": null, "left_offset": null, "left_ref": null, "right_offset": null, "separator": null, "text_range": ""}, "pattern": "/$/\\n/"},
+		"command": "ex_substitute", "args": {"pattern": "/$/\\n/", "line_range": {"right_offset": null, "right_ref": null, "left_search_offsets": [], "separator": null, "left_ref": null, "right_search_offsets": [], "left_offset": null, "text_range": ""}},
 		"context": [
 			{"key": "vi_command_mode_aware"},
 			{"key": "vi_mode_visual", "operand": false}
@@ -156,7 +156,7 @@
 	},
 	{
 		"keys": ["ctrl+h"],
-		"command": "move", "args": {"forward": false, "by": "characters"},
+		"command": "move", "args": {"by": "characters", "forward": false},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -174,14 +174,14 @@
 	},
 	{
 		"keys": ["ctrl+j"],
-		"command": "move", "args": {"forward": true, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": true},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["ctrl+j"],
-		"command": "move", "args": {"forward": true, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": true},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
@@ -195,14 +195,14 @@
 	},
 	{
 		"keys": ["ctrl+k"],
-		"command": "move", "args": {"forward": false, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": false},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["ctrl+k"],
-		"command": "move", "args": {"forward": false, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": false},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
@@ -220,7 +220,7 @@
 	},
 	{
 		"keys": ["ctrl+l"],
-		"command": "move", "args": {"forward": true, "by": "characters"},
+		"command": "move", "args": {"by": "characters", "forward": true},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -259,7 +259,7 @@
 	},
 	{
 		"keys": ["ctrl+shift+enter"],
-		"command": "ex_substitute", "args": {"line_range": {"right_search_offsets": [], "left_search_offsets": [], "right_ref": null, "left_offset": null, "left_ref": null, "right_offset": null, "separator": null, "text_range": ""}, "pattern": "/^/\\n/"},
+		"command": "ex_substitute", "args": {"pattern": "/^/\\n/", "line_range": {"right_offset": null, "right_ref": null, "left_search_offsets": [], "separator": null, "left_ref": null, "right_search_offsets": [], "left_offset": null, "text_range": ""}},
 		"context": [
 			{"key": "vi_command_mode_aware"},
 			{"key": "vi_mode_visual", "operand": false}
@@ -315,14 +315,14 @@
 	},
 	{
 		"keys": ["ctrl+w"],
-		"command": "move", "args": {"forward": true, "by": "words"},
+		"command": "move", "args": {"by": "words", "forward": true},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["d"],
-		"command": "move", "args": {"forward": false, "by": "paragraphs"},
+		"command": "move", "args": {"by": "paragraphs", "forward": false},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -511,7 +511,7 @@
 	},
 	{
 		"keys": ["h"],
-		"command": "move", "args": {"forward": false, "by": "characters"},
+		"command": "move", "args": {"by": "characters", "forward": false},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -526,7 +526,7 @@
 	},
 	{
 		"keys": ["j"],
-		"command": "move", "args": {"forward": true, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": true},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -541,14 +541,14 @@
 	},
 	{
 		"keys": ["k"],
-		"command": "move", "args": {"forward": false, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": false},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
 	},
 	{
 		"keys": ["l"],
-		"command": "move", "args": {"forward": true, "by": "characters"},
+		"command": "move", "args": {"by": "characters", "forward": true},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -560,22 +560,31 @@
 			{"key": "emmet_action_enabled.remove_tag"}
 		]
 	},
-		{ "keys": ["shift+tab"], "command": "unindent" },
+	{
+		"keys": ["shift+tab"],
+		"command": "unindent"
+	},
 	{
 		"keys": ["shift+tab"],
 		"command": "replace_completion_with_auto_complete",
-		"context": [ {"key": "last_command", "operand": "insert_best_completion", "operator": "equal"} ]
+		"context": [
+			{"key": "last_command", "operand": "insert_best_completion", "operator": "equal"}
+		]
 	},
 	{
 		"keys": ["shift+tab"],
-		"command": "move", "args": {"forward": false, "by": "lines"},
-		"context":  [{"key": "overlay_visible", "operand": true}]
+		"command": "move", "args": {"by": "lines", "forward": false},
+		"context": [
+			{"key": "overlay_visible", "operand": true}
+		]
 	},
 	{
-		"keys": ["tab"], "command": "indent",
-		"context":[{"key": "vi_command_mode_aware"}],
+		"keys": ["tab"],
+		"command": "indent",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
 	},
-
 	{
 		"keys": ["tab"],
 		"command": "insert_best_completion", "args": {"default": "\t", "exact": false},
@@ -597,7 +606,7 @@
 	},
 	{
 		"keys": ["tab"],
-		"command": "move", "args": {"forward": true, "by": "characters"},
+		"command": "move", "args": {"by": "characters", "forward": true},
 		"context": [
 			{"key": "auto_complete_visible", "operand": false, "operator": "equal"},
 			{"key": "following_text", "operand": "^[{}()\\[\\]'\"]", "operator": "regex_contains"},
@@ -621,14 +630,14 @@
 	},
 	{
 		"keys": ["tab"],
-		"command": "move", "args": {"forward": true, "by": "lines"},
+		"command": "move", "args": {"by": "lines", "forward": true},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
 	},
 	{
 		"keys": ["u"],
-		"command": "move", "args": {"forward": true, "by": "paragraphs"},
+		"command": "move", "args": {"by": "paragraphs", "forward": true},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]

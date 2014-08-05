@@ -25,12 +25,12 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"AutoFileName",
-		"LineProfiler",
 		"Python Breakpoints",
-		"Floobits",
+		"LineProfiler",
+		"Vintage",
 		"PythonTest",
-		"Vintage"
+		"Floobits",
+		"AutoFileName"
 	],
 	"indent_guide_options":
 	[
@@ -38,6 +38,7 @@
 	],
 	"index_exclude_patterns":
 	[
+		"/home/haakenlid/.dotfiles/backups/2014_02_23-03_16_57*",
 		"*.log",
 		"/srv/universitas_project/static*"
 	],
