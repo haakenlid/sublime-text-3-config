@@ -63,11 +63,11 @@
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+j"],
-		"command": "carry_file_to_pane", "args": {"direction": "up"}
+		"command": "carry_file_to_pane", "args": {"direction": "down"}
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+k"],
-		"command": "carry_file_to_pane", "args": {"direction": "down"}
+		"command": "carry_file_to_pane", "args": {"direction": "up"}
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+l"],
@@ -79,11 +79,11 @@
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+shift+j"],
-		"command": "create_pane_with_file", "args": {"direction": "up"}
+		"command": "create_pane_with_file", "args": {"direction": "down"}
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+shift+k"],
-		"command": "create_pane_with_file", "args": {"direction": "down"}
+		"command": "create_pane_with_file", "args": {"direction": "up"}
 	},
 	{
 		"keys": ["ctrl+a", "ctrl+shift+l"],
@@ -99,11 +99,11 @@
 	},
 	{
 		"keys": ["ctrl+a", "j"],
-		"command": "travel_to_pane", "args": {"direction": "up"}
+		"command": "travel_to_pane", "args": {"direction": "down"}
 	},
 	{
 		"keys": ["ctrl+a", "k"],
-		"command": "travel_to_pane", "args": {"direction": "down"}
+		"command": "travel_to_pane", "args": {"direction": "up"}
 	},
 	{
 		"keys": ["ctrl+a", "l"],
@@ -126,7 +126,7 @@
 	},
 	{
 		"keys": ["ctrl+b"],
-		"command": "move", "args": {"by": "words", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "words"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -140,7 +140,7 @@
 	},
 	{
 		"keys": ["ctrl+enter"],
-		"command": "ex_substitute", "args": {"pattern": "/$/\\n/", "line_range": {"right_offset": null, "right_ref": null, "left_search_offsets": [], "separator": null, "left_ref": null, "right_search_offsets": [], "left_offset": null, "text_range": ""}},
+		"command": "ex_substitute", "args": {"pattern": "/$/\\n/", "line_range": {"text_range": "", "left_search_offsets": [], "right_offset": null, "right_ref": null, "left_offset": null, "left_ref": null, "right_search_offsets": [], "separator": null}},
 		"context": [
 			{"key": "vi_command_mode_aware"},
 			{"key": "vi_mode_visual", "operand": false}
@@ -156,7 +156,7 @@
 	},
 	{
 		"keys": ["ctrl+h"],
-		"command": "move", "args": {"by": "characters", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "characters"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -174,14 +174,14 @@
 	},
 	{
 		"keys": ["ctrl+j"],
-		"command": "move", "args": {"by": "lines", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "lines"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["ctrl+j"],
-		"command": "move", "args": {"by": "lines", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "lines"},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
@@ -195,14 +195,14 @@
 	},
 	{
 		"keys": ["ctrl+k"],
-		"command": "move", "args": {"by": "lines", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "lines"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["ctrl+k"],
-		"command": "move", "args": {"by": "lines", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "lines"},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
@@ -220,7 +220,7 @@
 	},
 	{
 		"keys": ["ctrl+l"],
-		"command": "move", "args": {"by": "characters", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "characters"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
@@ -259,7 +259,7 @@
 	},
 	{
 		"keys": ["ctrl+shift+enter"],
-		"command": "ex_substitute", "args": {"pattern": "/^/\\n/", "line_range": {"right_offset": null, "right_ref": null, "left_search_offsets": [], "separator": null, "left_ref": null, "right_search_offsets": [], "left_offset": null, "text_range": ""}},
+		"command": "ex_substitute", "args": {"pattern": "/^/\\n/", "line_range": {"text_range": "", "left_search_offsets": [], "right_offset": null, "right_ref": null, "left_offset": null, "left_ref": null, "right_search_offsets": [], "separator": null}},
 		"context": [
 			{"key": "vi_command_mode_aware"},
 			{"key": "vi_mode_visual", "operand": false}
@@ -307,6 +307,13 @@
 		]
 	},
 	{
+		"keys": ["ctrl+u"],
+		"command": "soft_undo",
+		"context": [
+			{"key": "vi_insert_mode_aware"}
+		]
+	},
+	{
 		"keys": ["ctrl+v"],
 		"command": "press_key", "args": {"key": "<C-v>"},
 		"context": [
@@ -315,30 +322,23 @@
 	},
 	{
 		"keys": ["ctrl+w"],
-		"command": "move", "args": {"by": "words", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "words"},
 		"context": [
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["d"],
-		"command": "move", "args": {"by": "paragraphs", "forward": false},
+		"command": "move", "args": {"forward": true, "by": "pages"},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
 	},
 	{
 		"keys": ["g", "0"],
-		"command": "toggle_side_bar",
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
-	},
-	{
-		"keys": ["g", "0"],
 		"command": "focus_side_bar",
 		"context": [
-			{"key": "panel", "operand": "sidebar", "operator": "equal"},
+			{"key": "panel", "operator": "equal", "operand": "sidebar"},
 			{"key": "vi_command_mode_aware"}
 		]
 	},
@@ -374,8 +374,8 @@
 		"keys": ["g", "D"],
 		"command": "anaconda_doc",
 		"context": [
-			{"key": "selector", "operand": "source.python", "operator": "equal"},
-			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "selector", "operator": "equal", "operand": "source.python"},
+			{"key": "setting.command_mode", "operator": "equal", "operand": true},
 			{"key": "setting.is_widget", "operand": false}
 		]
 	},
@@ -405,8 +405,8 @@
 		"keys": ["g", "d"],
 		"command": "anaconda_goto",
 		"context": [
-			{"key": "selector", "operand": "source.python", "operator": "equal"},
-			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "selector", "operator": "equal", "operand": "source.python"},
+			{"key": "setting.command_mode", "operator": "equal", "operand": true},
 			{"key": "setting.is_widget", "operand": false}
 		]
 	},
@@ -472,14 +472,14 @@
 	},
 	{
 		"keys": ["g", "t", "enter"],
-		"command": "easy_motion", "args": {"select_text": true, "character": "enter"},
+		"command": "easy_motion", "args": {"character": "enter", "select_text": true},
 		"context": [
 			{"key": "vi_command_mode_aware"}
 		]
 	},
 	{
 		"keys": ["g", "t", "enter"],
-		"command": "easy_motion", "args": {"select_text": false, "character": "enter"},
+		"command": "easy_motion", "args": {"character": "enter", "select_text": false},
 		"context": [
 			{"key": "vi_command_mode_aware"},
 			{"key": "vi_mode_visual", "operand": false},
@@ -490,8 +490,8 @@
 		"keys": ["g", "u"],
 		"command": "anaconda_find_usages",
 		"context": [
-			{"key": "selector", "operand": "source.python", "operator": "equal"},
-			{"key": "setting.command_mode", "operand": true, "operator": "equal"},
+			{"key": "selector", "operator": "equal", "operand": "source.python"},
+			{"key": "setting.command_mode", "operator": "equal", "operand": true},
 			{"key": "setting.is_widget", "operand": false}
 		]
 	},
@@ -510,8 +510,15 @@
 		]
 	},
 	{
+		"keys": ["g", "x"],
+		"command": "toggle_side_bar",
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
 		"keys": ["h"],
-		"command": "move", "args": {"by": "characters", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "characters"},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -526,7 +533,7 @@
 	},
 	{
 		"keys": ["j"],
-		"command": "move", "args": {"by": "lines", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "lines"},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -541,14 +548,14 @@
 	},
 	{
 		"keys": ["k"],
-		"command": "move", "args": {"by": "lines", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "lines"},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
 	},
 	{
 		"keys": ["l"],
-		"command": "move", "args": {"by": "characters", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "characters"},
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -568,12 +575,12 @@
 		"keys": ["shift+tab"],
 		"command": "replace_completion_with_auto_complete",
 		"context": [
-			{"key": "last_command", "operand": "insert_best_completion", "operator": "equal"}
+			{"key": "last_command", "operator": "equal", "operand": "insert_best_completion"}
 		]
 	},
 	{
 		"keys": ["shift+tab"],
-		"command": "move", "args": {"by": "lines", "forward": false},
+		"command": "move", "args": {"forward": false, "by": "lines"},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
@@ -587,9 +594,9 @@
 	},
 	{
 		"keys": ["tab"],
-		"command": "insert_best_completion", "args": {"default": "\t", "exact": false},
+		"command": "insert_best_completion", "args": {"exact": false, "default": "\t"},
 		"context": [
-			{"key": "setting.tab_completion", "operand": true, "operator": "equal"},
+			{"key": "setting.tab_completion", "operator": "equal", "operand": true},
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
@@ -597,19 +604,19 @@
 		"keys": ["tab"],
 		"command": "reindent",
 		"context": [
-			{"key": "following_text", "operand": "^$", "match_all": true, "operator": "regex_match"},
-			{"key": "preceding_text", "operand": "^$", "match_all": true, "operator": "regex_match"},
-			{"key": "selection_empty", "operand": true, "match_all": true, "operator": "equal"},
-			{"key": "setting.auto_indent", "operand": true, "operator": "equal"},
+			{"operator": "regex_match", "key": "following_text", "match_all": true, "operand": "^$"},
+			{"operator": "regex_match", "key": "preceding_text", "match_all": true, "operand": "^$"},
+			{"operator": "equal", "key": "selection_empty", "match_all": true, "operand": true},
+			{"key": "setting.auto_indent", "operator": "equal", "operand": true},
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
 	{
 		"keys": ["tab"],
-		"command": "move", "args": {"by": "characters", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "characters"},
 		"context": [
-			{"key": "auto_complete_visible", "operand": false, "operator": "equal"},
-			{"key": "following_text", "operand": "^[{}()\\[\\]'\"]", "operator": "regex_contains"},
+			{"key": "auto_complete_visible", "operator": "equal", "operand": false},
+			{"key": "following_text", "operator": "regex_contains", "operand": "^[{}()\\[\\]'\"]"},
 			{"key": "vi_insert_mode_aware"}
 		]
 	},
@@ -617,27 +624,34 @@
 		"keys": ["tab"],
 		"command": "next_field",
 		"context": [
-			{"key": "auto_complete_visible", "operand": false, "operator": "equal"},
-			{"key": "has_next_field", "operand": true, "operator": "equal"}
+			{"key": "auto_complete_visible", "operator": "equal", "operand": false},
+			{"key": "has_next_field", "operator": "equal", "operand": true}
 		]
 	},
 	{
 		"keys": ["tab"],
 		"command": "replace_completion_with_next_completion",
 		"context": [
-			{"key": "last_command", "operand": "insert_best_completion", "operator": "equal"}
+			{"key": "last_command", "operator": "equal", "operand": "insert_best_completion"}
 		]
 	},
 	{
 		"keys": ["tab"],
-		"command": "move", "args": {"by": "lines", "forward": true},
+		"command": "move", "args": {"forward": true, "by": "lines"},
 		"context": [
 			{"key": "overlay_visible", "operand": true}
 		]
 	},
 	{
 		"keys": ["u"],
-		"command": "move", "args": {"by": "paragraphs", "forward": true},
+		"command": "move", "args": {"forward": false, "by": "pages"},
+		"context": [
+			{"key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{
+		"keys": ["w"],
+		"command": "save_file",
 		"context": [
 			{"key": "control", "operand": "sidebar_tree"}
 		]
@@ -681,8 +695,8 @@
 		"keys": ["z", "w"],
 		"command": "anaconda_rename",
 		"context": [
-			{"key": "selector", "operand": "source.python", "operator": "equal"},
-			{"key": "setting.command_mode", "operand": true, "operator": "equal"}
+			{"key": "selector", "operator": "equal", "operand": "source.python"},
+			{"key": "setting.command_mode", "operator": "equal", "operand": true}
 		]
 	}
 ]

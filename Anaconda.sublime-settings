@@ -1,4 +1,6 @@
 {
+  // "jsonserver_debug": false,
+  // "jsonserver_debug_port": 9999,
     "aggressive": 7,
     "pep8_max_line_length": 120,
     "display_signatures": true,
@@ -6,10 +8,14 @@
     "pep257": true,
     "suppress_word_completions": false,
     "suppress_explicit_completions": false,
+    "display_signatures": true,
     "complete_parameters": true,
     "complete_all_parameters": false,
-    "anaconda_linter_delay": 1.0,
+    "anaconda_linting": true,
+    "anaconda_linter_delay": 5.0,
     "anaconda_gutter_marks": true,
+    "anaconda_debug": true,
+    "auto_formatting_timeout": 3,  // seconds
     // "anaconda_gutter_theme": "bright",
     "anaconda_linter_mark_style": "none",
     "pep8_ignore": [
