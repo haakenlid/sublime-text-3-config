@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[verbose_name_plural=_('${1:this}'),]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>verbose_name_plural</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.python</scope>
+  <description>verbose_name_plural=_('')</description>
+</snippet>

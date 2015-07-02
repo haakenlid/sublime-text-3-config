@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+class ${1:Myapp}AppConfig(AppConfig):
+    name = 'myapps.${1/^(.*)/(?1\L$1)/g}'
+    verbose_name = _('$1')
+]]></content>
+    <tabTrigger>appconfig</tabTrigger>
+    <scope>source.python</scope>
+    <description>django app Appconfig Class</description>
+</snippet>

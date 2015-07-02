@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[import logging
+logger = logging.getLogger('${1:universitas}')]]></content>
+    <tabTrigger>importlogger</tabTrigger>
+    <scope>source.python</scope>
+    <description>django import logger</description>
+</snippet>

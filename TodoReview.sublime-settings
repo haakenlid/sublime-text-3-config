@@ -2,9 +2,6 @@
     "patterns": {
         "TODO": "TODO[\\s]*?:+(?P<todo>.*)$"
     },
-    "include_paths": [
-        "/srv/universitas_project/universitas_no"
-    ],
     "case_sensitive": false,
     "render_include_folder": false,
     "render_spaces": 1,

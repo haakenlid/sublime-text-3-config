@@ -2,7 +2,7 @@
   // "jsonserver_debug": false,
   // "jsonserver_debug_port": 9999,
     "aggressive": 7,
-    "pep8_max_line_length": 120,
+    "pep8_max_line_length": 80,
     "display_signatures": true,
     "pep8": true,
     "pep257": true,
@@ -15,7 +15,7 @@
     "anaconda_linter_delay": 5.0,
     "anaconda_gutter_marks": true,
     "anaconda_debug": true,
-    "auto_formatting_timeout": 3,  // seconds
+    "auto_formatting_timeout": 15,  // seconds
     // "anaconda_gutter_theme": "bright",
     "anaconda_linter_mark_style": "none",
     "pep8_ignore": [

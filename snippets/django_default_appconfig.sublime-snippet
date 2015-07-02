@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[default_app_config = 'myapps.${1/^(.*)/(?1\L$1)/g}.apps.${1:Myapp}AppConfig'
+]]></content>
+    <tabTrigger>default_app_config</tabTrigger>
+    <scope>source.python</scope>
+    <description>django default_app_config in __init__.py</description>
+</snippet>

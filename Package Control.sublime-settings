@@ -1,8 +1,12 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"Alignment",
 		"Anaconda",
+		"AngularJS",
 		"AutoFileName",
 		"Bash Build System",
 		"Clickable URLs",
@@ -21,6 +25,7 @@
 		"LineProfiler",
 		"LiveStyle",
 		"Markdown Preview",
+		"Minify",
 		"nginx",
 		"Origami",
 		"Package Control",
@@ -34,6 +39,7 @@
 		"SassBeautify",
 		"SideBarEnhancements",
 		"SideBarGit",
+		"Simple Print Function",
 		"sublime-github",
 		"SublimeGit",
 		"SublimeLinter",
