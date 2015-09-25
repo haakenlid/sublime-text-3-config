@@ -1,13 +1,16 @@
 {
+        "bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
+                "1337 Color Scheme",
 		"Alignment",
 		"Anaconda",
-		"AngularJS",
+                "AutoDocstring",
 		"AutoFileName",
+                "Babel",
 		"Bash Build System",
 		"Clickable URLs",
 		"CSS Extended Completions",
@@ -20,6 +23,7 @@
 		"Foundation 5 Snippets",
 		"GitGutter",
 		"HTML-CSS-JS Prettify",
+                "JSX",
 		"Keymap Redefiner",
 		"Keymaps",
 		"LineProfiler",
@@ -34,6 +38,7 @@
 		"Python Breakpoints",
 		"Python Improved",
 		"PythonTest",
+                "ReactJS",
 		"Sass",
 		"SASS Build",
 		"SassBeautify",
@@ -46,11 +51,13 @@
 		"SublimeLinter-csslint",
 		"SublimeLinter-jshint",
 		"SublimeLinter-json",
+                "SublimeLinter-jsxhint",
 		"SublimeLinter-php",
 		"SublimeLinter-shellcheck",
 		"Terminal",
 		"Theme - Flatland",
 		"TodoReview",
+                "Vagrant",
 		"Vintageous"
 	]
 }

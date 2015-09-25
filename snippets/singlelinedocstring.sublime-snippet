@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[""" $1 """$0]]></content>
+    <content><![CDATA["""$1"""$0]]></content>
     <tabTrigger>docsingle</tabTrigger>
     <scope>source.python</scope>
     <description>single line docstring</description>
